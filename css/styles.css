@@ -384,7 +384,7 @@ body {
 }
 
 .team-profession {
-  padding-top: 10px;
+  margin-top: 10px;
   font-style: normal;
   font-size: 16px;
   line-height: 1.19;
@@ -402,8 +402,8 @@ body {
   border-radius: 0px 0px 4px 4px;
 }
 .empl-name {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 16px;
 }
 
 .works-text {
@@ -492,12 +492,24 @@ li .fill {
   border-radius: 4px;
   color: #afb1b8;
 
-  transition: color 250 ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: border-color 250 ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.clients .clients-list {
+  margin-right: 30px;
 }
 
 .clients-link > .icon {
   fill: currentColor;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,
@@ -505,10 +517,15 @@ li .fill {
   color: var(--brand-color-one);
   border-color: var(--brand-color-one);
 }
-/* .links .clients-list:hover,
+
+.clients-link:hover .clients-link > .icon,
+.clients-link:focus .clients-link > .icon {
+  fill: var(--brand-color-one);
+}
+.links .clients-list:hover,
 .links .clients-list:focus {
   fill: var(--brand-color-one);
-} */
+}
 /* Адресы в футере */
 .adress {
   color: #ffffff;
@@ -604,7 +621,7 @@ footer .container {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.footer-adds > .fill-link {
+.social-fill-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -614,6 +631,9 @@ footer .container {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
   fill: #ffffff;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-adds .fill-link > .icon {
@@ -631,10 +651,8 @@ footer .fill {
   cursor: pointer;
 }
 
-/* .footer-adds .fill-link:hover,
-.footer-adds .fill-link:focus, */
-.footer-adds .fill:hover,
-.footer-adds .fill:focus {
+.social-fill-link:hover,
+.social-fill-link:focus {
   background-color: var(--brand-color-one);
 }
 
@@ -802,7 +820,7 @@ footer .fill {
   border-radius: 4px;
 }
 
-.backdrop .is-hiden {
+.backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
