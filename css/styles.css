@@ -430,6 +430,10 @@ li .fill {
   fill: #afb1b8;
   margin-right: 0;
   cursor: pointer;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fill-link {
@@ -443,19 +447,15 @@ li .fill {
   background-color: var(--light-background-color);
   fill: #afb1b8;
 
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.fill-link:hover svg,
-.fill-link:focus svg {
+.fill-link:hover .icon,
+.fill-link:focus .icon {
   fill: var(--light-background-color);
-  background-color: var(--brand-color-one);
+  /* background-color: var(--brand-color-one); */
 }
 
 .fill-link:hover,
@@ -506,7 +506,7 @@ li .fill {
 }
 
 .clients-link > .icon {
-  fill: currentColor;
+  fill: #afb1b8;
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -514,12 +514,11 @@ li .fill {
 
 .clients-link:hover,
 .clients-link:focus {
-  color: var(--brand-color-one);
   border-color: var(--brand-color-one);
 }
 
-.clients-link:hover .clients-link > .icon,
-.clients-link:focus .clients-link > .icon {
+.clients-link:hover .icon,
+.clients-link:focus .icon {
   fill: var(--brand-color-one);
 }
 .links .clients-list:hover,
@@ -611,14 +610,14 @@ footer .container {
 }
 
 .footer-adds .fill {
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
+  margin-right: 10px; */
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
+  /* border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1); */
 }
 
 .social-fill-link {
@@ -681,6 +680,7 @@ footer .fill {
 }
 
 .button {
+  display: inline-block;
   border-radius: 4px;
   border: 0;
   padding: 6px 22px;
@@ -694,14 +694,25 @@ footer .fill {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--main-text-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+  /* transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-text {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
 .button:focus {
-  color: #ffffff;
   background-color: #2196f3;
+}
+
+.button:hover .button-text,
+.button:focus .button-text {
+  color: #ffffff;
 }
 
 .works {
